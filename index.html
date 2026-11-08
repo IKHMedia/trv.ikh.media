@@ -72,8 +72,19 @@
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
 
-<script src="https://cdn.ikh.media/js/no-facebook.js"></script>
-
+<script> 
+(function() {
+  const url = new URL(window.location.href);
+  if (url.searchParams.has('fbclid')) {
+    url.searchParams.delete('fbclid');
+    // Update the address bar without reloading
+    window.history.replaceState(null, '', url.toString());
+  }
+})();</script>
+<script>
+if (window.location.hostname.indexOf("www") == 0) {
+    window.location = window.location.href.replace("www.","");
+}</script>
 <style>
 
 body {font-family: "Lato", sans-serif }
@@ -156,7 +167,7 @@ body {font-family: "Lato", sans-serif }
 
 
 
-      <p class="w3-center"><i><br><img src="https://cdn.ikh.media/images/WSAV/WSAV.webp" alt="The Bridge Logo" style="width:100%;"><br><h1>Listen Live</h1><br><iframe src="https://ikhradio.stream/public/wsav/embed" frameborder="0" allowtransparency="true" style="width: 100%; min-height: 150px; height: 150px; border: 0;"></iframe><br><br><h1>The Bridge Stream Offline? - Use This Backup Instead!<br><audio controls=""><source src="https://ikhradio.stream/listen/wsav/stream" type="audio/mpeg"></audio><br></h1></p><br>
+      <p class="w3-center"><i><br><img src="https://trv.ikh.media/TheHawkTN.webp" alt="The Hawk Logo" style="width:100%;"><br><h1>Listen Live</h1><br><iframe src="https://ikhradio.stream/public/wsav/embed" frameborder="0" allowtransparency="true" style="width: 100%; min-height: 150px; height: 150px; border: 0;"></iframe><br><br><h1>The Hawk Stream Offline? - Use This Backup Instead!<br><audio controls=""><source src="https://ikhradio.stream/listen/wsav/stream" type="audio/mpeg"></audio><br></h1></p><br>
 
       <p class="w3-center"><i><br><img src="https://cdn.ikh.media/images/WSAV/WSAVHD2.webp" alt="The Shake Logo" style="width:100%;"><br><h1>Listen Live</h1><br><iframe src="https://ikhradio.stream/public/wsavhd2/embed" frameborder="0" allowtransparency="true" style="width: 100%; min-height: 150px; height: 150px; border: 0;"></iframe><br><br><h1>The Shake Stream Offline? - Use This Backup Instead!<br><audio controls=""><source src="https://ikhradio.stream/listen/wsav/stream" type="audio/mpeg"></audio><br></h1></p><br>
 
